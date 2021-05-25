@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block title %}home{% endblock %}
+
+{% block content %}
+<form action="/queAns/1" method="POST">
+<h2>{{survey1.title}}</h2>
+<h3>{{survey1.instructions}}</h3>
+<button>submit</button>
+</form>
+<br>
+<br>
+<form action="/queAns/2"  method="POST">
+<h2>{{survey2.title}}</h2>
+<h3>{{survey2.instructions}}</h3>
+<button>submit</button>
+</form>
+
+
+{% endblock %}

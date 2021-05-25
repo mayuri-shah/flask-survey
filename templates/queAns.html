@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block title %}Q-A{% endblock %}
+
+{% block content %}
+<h1>{{num}}</h1>
+
+<form action="/answer/{{num}}" method="POST"> 
+    <ul>
+{% for q in ques %}
+<li>{{q.question}}</li>
+{% for i in range(0,q.choices|length) %}
+<input type="radio" id="choice1" value ="{{q.choices[i]}}" name="{{q}}">
+<label for="choice1">{{q.choices[i]}}</label>
+{% endfor %}
+{% if q.allow_text %}
+<br>
+<input type="text" name="description" >
+{% endif %}
+
+{% endfor %}
+</ul>
+<button>submit</button>
+</form>   
+{% endblock %}
